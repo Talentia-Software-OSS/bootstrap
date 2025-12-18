@@ -1,9 +1,3 @@
-# Ignore docs files
-/_site/
-# Hugo files
-/resources/
-/.hugo_build.lock
-
 # Numerous always-ignore extensions
 *.diff
 *.err
@@ -30,13 +24,7 @@
 nbproject
 Thumbs.db
 /.vscode/
-# Local Netlify folder
-.netlify
-
-# Komodo
-.komodotools
-*.komodoproject
 
 # Folders to ignore
-/js/coverage/
 /node_modules/
+/publish/
