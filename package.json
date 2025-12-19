@@ -40,6 +40,8 @@
   ],
   "scripts": {
     "clean": "rimraf publish",
+    "build": "npm run clean && npm run css && npm run js",
+    "start": "npm run build && lite-server",
     "css": "npm run css-compile && npm run css-minify && npm run css-prefix && npm run copy-scss && npm run copy-files",
     "css-compile": "sass --style expanded --source-map --embed-sources --no-error-css --no-charset vendors/custom/scss/:publish/dist/css/",
     "css-minify": "sass --style compressed --source-map --embed-sources --no-error-css --no-charset --load-path=vendors/custom/scss vendors/custom/scss/bootstrap.scss:publish/dist/css/bootstrap.min.css ",
@@ -50,8 +52,7 @@
     "js": "npm run js-simple && npm run js-bundle && npm run copy-js",
     "js-simple": "rollup --environment BUNDLE:false --config rollup.config.js",
     "js-bundle": "rollup --environment BUNDLE:true --config rollup.config.js",
-    "copy-js": "copyfiles -u 2 \"vendors/custom/js/**/*\" publish",
-    "build": "npm run clean && npm run css && npm run js"
+    "copy-js": "copyfiles -u 2 \"vendors/custom/js/**/*\" publish"
   },
   "peerDependencies": {
     "jquery": "1.9.1 - 3",

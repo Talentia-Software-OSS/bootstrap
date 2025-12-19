@@ -6,6 +6,7 @@
  */
 
 @use "colors" as *;
+@use "characters" as *;
 @use "functions" as *;
 @use "variables" as *;
 @use "mixins" as *;
@@ -29,7 +30,6 @@
 @use "breadcrumb";
 @use "pagination";
 @use "badge";
-
 @use "jumbotron";
 @use "alert";
 @use "progress";

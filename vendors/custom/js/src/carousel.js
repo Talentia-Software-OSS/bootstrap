@@ -533,15 +533,25 @@ class Carousel {
   }
 
   static _dataApiClickHandler(event) {
-    const selector = Util.getSelectorFromElement(this)
+    const selector = Util.getSelectorFromElement(this);
 
     if (!selector) {
+      // stop anchor default behavior from triggering from href XSS
+      if (Carousel._isHrefAnchorUnsecure(this)) {
+        event.preventDefault()
+      }
+
       return
     }
 
     const target = $(selector)[0]
 
     if (!target || !$(target).hasClass(CLASS_NAME_CAROUSEL)) {
+      // stop anchor default behavior from triggering from href XSS
+      if (Carousel._isHrefAnchorUnsecure(this)) {
+        event.preventDefault()
+      }
+
       return
     }
 
@@ -562,6 +572,18 @@ class Carousel {
     }
 
     event.preventDefault()
+  }
+
+  // stop anchor default behavior from triggering from href XSS
+  static _isHrefAnchorUnsecure(element) {
+    if (!element) return false;
+    
+    const href = element.getAttribute('href');
+    if (!href || typeof href !== 'string') return false;
+
+    if (['http:', 'https:', 'javascript:', 'data:'].some(value => href.toLowerCase().indexOf(value) !== -1)) return true;
+
+    return false;
   }
 }
 

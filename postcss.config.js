@@ -36,12 +36,12 @@ const reducePrecision = () => {
 };
 reducePrecision.postcss = true;
 
-// Plugin personalizzato per convertire hsla() in rgba()
-const hslaToRgba = () => {
+// Plugin personalizzato per convertire hsla() in hexa
+const hslaToHex = () => {
   return {
-    postcssPlugin: 'hsla-to-rgba',
+    postcssPlugin: 'hsla-to-hex',
     Declaration(decl) {
-      // Converti hsla(h, s%, l%, a) in rgba(r, g, b, a)
+      // Converti hsla(h, s%, l%, a) in hex (#RRGGBB o #RRGGBBAA)
       decl.value = decl.value.replace(/\bhsla\((\d+(?:\.\d+)?),\s*(\d+(?:\.\d+)?)%,\s*(\d+(?:\.\d+)?)%,\s*(\d+(?:\.\d+)?)\)/g, (match, h, s, l, a) => {
         const hue = parseFloat(h) / 360;
         const sat = parseFloat(s) / 100;
@@ -73,17 +73,26 @@ const hslaToRgba = () => {
         g = Math.round(g * 255);
         b = Math.round(b * 255);
 
-        return `rgba(${r}, ${g}, ${b}, ${alpha})`;
+        const toHex = (n) => n.toString(16).padStart(2, '0');
+        
+        // Se alpha è 1, usa formato hex standard (#RRGGBB)
+        if (alpha === 1) {
+          return `#${toHex(r)}${toHex(g)}${toHex(b)}`;
+        }
+        
+        // Se alpha < 1, usa formato hex con alpha (#RRGGBBAA)
+        const alphaHex = Math.round(alpha * 255);
+        return `#${toHex(r)}${toHex(g)}${toHex(b)}${toHex(alphaHex)}`;
       });
     }
   };
 };
-hslaToRgba.postcss = true;
+hslaToHex.postcss = true;
 
 export default {
   plugins: [
     autoprefixer({ cascade: false }),
-    hslaToRgba(),
+    hslaToHex(),
     rgbToHex(),
     reducePrecision()
   ]
