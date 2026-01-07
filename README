@@ -1,0 +1,71 @@
+# @talentia/bootstrap v4.6.5
+
+## 🚀 Descrizione
+
+Fork di Bootstrap v4.6.2. 
+Corregge la vulnerabilità XSS (CVE-2024-6531) identificata nel componente Bootstrap 4 Carousel.
+
+## 🎯 Caratteristiche
+
+- ✅ Corregge la vulnerabilità XSS (CVE-2024-6531) identificata nel componente Bootstrap v4.6.2 Carousel
+- ✅ Compatibile con Dart Sass <= 1.78.0
+- ✅ Funzionalmente identico a Bootstrap 4.6.2
+- ✅ Include codice sorgente SCSS personalizzabile
+- ✅ CSS compilato e minificato disponibile
+
+## 🔧 Sviluppo
+
+### Prerequisiti
+
+- Node.js >= 20.19.5
+- npm >= 10.8.2
+
+### Build
+
+```bash
+# Installa le dipendenze
+npm install
+
+# Build completo
+npm run build:prod
+
+# Build di sviluppo (non minificato)
+npm run build:dev
+
+# Start demo locale
+npm run demo
+
+# Watch (ricompila automaticamente alla modifica dei file sorgente)
+npm run watch
+```
+
+### Struttura del progetto
+
+```
+├── vendors
+│   ├── bootstrap/*         # Codice originale (non utilizzato nel build)
+│   └── custom/*            # Codice custom
+├── demo                    # Pagina demo
+├── .browserslistrc         # Elenco browsers supportati
+├── postcss.config.js       # Configurazione e plugins personalizzati PostCSS
+├── rollup.config.js        # Configurazione rollup per build componenti
+├── LICENSE                 # File di licenza
+├── README                  # File Readme
+├── .gitignore              # File gitignore
+├── package.json            # File di configurazione npm   
+└── package-lock.json       # File di lock npm
+```
+
+## 📦 Installazione
+
+```bash
+npm install @talentia/bootstrap@4.6.5
+```
+
+## 📄 License
+
+MIT - Vedi [LICENSE](./LICENSE)
+
+## 🙏 Credits
+
+Basato su [Bootstrap 4.6.2](https://github.com/twbs/bootstrap) by The Bootstrap Authors.
