@@ -1,3 +1,8 @@
+@use "colors" as *;
+@use "variables" as *;
+@use "mixins" as *;
+@use "functions" as *;
+
 .jumbotron {
   padding: $jumbotron-padding ($jumbotron-padding * .5);
   margin-bottom: $jumbotron-padding;

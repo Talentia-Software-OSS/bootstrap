@@ -1,3 +1,8 @@
+@use "colors" as *;
+@use "variables" as *;
+@use "mixins" as *;
+@use "functions" as *;
+
 // .modal-open      - body class for killing the scroll
 // .modal           - container to scroll within
 // .modal-dialog    - positioning shell for the actual modal

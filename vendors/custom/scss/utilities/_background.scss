@@ -1,3 +1,7 @@
+@use "../colors" as *;
+@use "../variables" as *;
+@use "../mixins" as *;
+
 // stylelint-disable declaration-no-important
 
 @each $color, $value in $theme-colors {

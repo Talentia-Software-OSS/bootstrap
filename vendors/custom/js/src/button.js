@@ -5,7 +5,7 @@ import $ from 'jquery'
  */
 
 const NAME = 'button'
-const VERSION = '4.6.5'
+const VERSION = '4.7.0'
 const DATA_KEY = 'bs.button'
 const EVENT_KEY = `.${DATA_KEY}`
 const DATA_API_KEY = '.data-api'

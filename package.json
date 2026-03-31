@@ -1,7 +1,7 @@
 {
   "name": "@talentia/bootstrap",
   "description": "The most popular front-end framework for developing responsive, mobile first projects on the web.",
-  "version": "4.6.5",
+  "version": "4.7.0",
   "keywords": [
     "css",
     "sass",
@@ -77,6 +77,6 @@
     "postcss-cli": "11.0.1",
     "rimraf": "6.1.2",
     "rollup": "4.53.5",
-    "sass": "1.78.0"
+    "sass": "1.85.1"
   }
 }

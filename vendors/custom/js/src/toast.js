@@ -6,7 +6,7 @@ import Util from './util'
  */
 
 const NAME = 'toast'
-const VERSION = '4.6.5'
+const VERSION = '4.7.0'
 const DATA_KEY = 'bs.toast'
 const EVENT_KEY = `.${DATA_KEY}`
 const JQUERY_NO_CONFLICT = $.fn[NAME]

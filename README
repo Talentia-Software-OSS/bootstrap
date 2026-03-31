@@ -1,14 +1,16 @@
-# @talentia/bootstrap v4.6.5
+# @talentia/bootstrap v4.7.0
 
 ## 🚀 Descrizione
 
 Fork di Bootstrap v4.6.2. 
+Utilizza Dart Sass con sistema di moduli `@use` e `@forward`.
 Corregge la vulnerabilità XSS (CVE-2024-6531) identificata nel componente Bootstrap 4 Carousel.
 
 ## 🎯 Caratteristiche
 
+- ✅ Utilizza Dart Sass con sistema di moduli (`@use` invece di `@import` deprecato)
 - ✅ Corregge la vulnerabilità XSS (CVE-2024-6531) identificata nel componente Bootstrap v4.6.2 Carousel
-- ✅ Compatibile con Dart Sass <= 1.78.0
+- ✅ Compatibile con Dart Sass <= 1.85.1
 - ✅ Funzionalmente identico a Bootstrap 4.6.2
 - ✅ Include codice sorgente SCSS personalizzabile
 - ✅ CSS compilato e minificato disponibile
@@ -59,7 +61,7 @@ npm run watch
 ## 📦 Installazione
 
 ```bash
-npm install @talentia/bootstrap@4.6.5
+npm install @talentia/bootstrap@4.7.0
 ```
 
 ## 📄 License

@@ -1,3 +1,8 @@
+@use "colors" as *;
+@use "variables" as *;
+@use "mixins" as *;
+@use "functions" as *;
+
 // stylelint-disable selector-list-comma-newline-after
 
 //
@@ -21,32 +26,31 @@ h5, .h5 { @include font-size($h5-font-size); }
 h6, .h6 { @include font-size($h6-font-size); }
 
 .lead {
-  @include font-size($lead-font-size);
   font-weight: $lead-font-weight;
+  @include font-size($lead-font-size);
 }
 
 // Type display classes
 .display-1 {
-  @include font-size($display1-size);
   font-weight: $display1-weight;
   line-height: $display-line-height;
+  @include font-size($display1-size);
 }
 .display-2 {
-  @include font-size($display2-size);
   font-weight: $display2-weight;
   line-height: $display-line-height;
+  @include font-size($display2-size);
 }
 .display-3 {
-  @include font-size($display3-size);
   font-weight: $display3-weight;
   line-height: $display-line-height;
+  @include font-size($display3-size);
 }
 .display-4 {
-  @include font-size($display4-size);
   font-weight: $display4-weight;
   line-height: $display-line-height;
+  @include font-size($display4-size);
 }
-
 
 //
 // Horizontal rules
